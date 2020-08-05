@@ -18,7 +18,8 @@ export default class RandomChar extends Component {
     //опишем состояние нашего объекта
     state = {
         char: {},
-        loading: true //в момент загрузки данных с сервера
+        loading: true, //в момент загрузки данных с сервера
+        display: true //это для кнопки toggle
     }
 
     //обработчики
@@ -45,6 +46,16 @@ export default class RandomChar extends Component {
         this.gotService.getCharacter(id)
             .then(this.onCharLoaded)
             .catch(this.onError);
+    }
+
+    toggleRandomChar() {
+        if (this.state.display) {
+            this.setState({
+                display: false
+            })            
+        } else {
+            this.setState()
+        }
     }
 
 
